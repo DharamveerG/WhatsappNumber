@@ -1,22 +1,25 @@
 let input = document.querySelector(".number");
 let button = document.querySelector(".mainButton");
-let inputValue ;
+let inputValue;
 button.disabled=true;
 const inputBlur = (e) => {
-  if (e.target.value.toString().length ==9) {
+  inputValue = e.target.value;
+  if (inputValue.toString().length ===9) {
     button.disabled=false;
-    inputValue = e.target.value;
     input.classList.remove('red');
     
   }
   else{
+    button.disabled=true;
     input.classList.add('red');
   }
 };
+
 const buttonHandler = () => {
-  if (inputValue) {
+  if (inputValue.toString().length ===9) {
     window.open("https://wa.me/+91" + inputValue, "_self");
   }
+  
 };
 
 input.addEventListener("keydown", inputBlur);
