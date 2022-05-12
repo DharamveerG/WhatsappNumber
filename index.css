@@ -26,17 +26,21 @@ justify-content: center;
 
 }
 .number:focus{
-    outline:solid rgb(181, 109, 109);
+    outline:solid #25D366;
     
     
+}
+
+.red:focus{
+    outline: solid #FF8080;
 }
 .mainButton{
     width: 50%;
     padding: .5em;
-    border: 1px solid brown;
-    border-radius: 2%;
+    border: 1px solid #242424f3;
+    border-radius: 5px;
     background-color:transparent;
 }
 .mainButton:hover{
-    background-color: green;
+    background-color: #25D366;
 }
