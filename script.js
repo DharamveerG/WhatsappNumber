@@ -4,7 +4,9 @@ let inputValue;
 button.disabled=true;
 const inputBlur = (e) => {
   inputValue = e.target.value;
-  if (inputValue.toString().length ===9) {
+  console.log(inputValue);
+  
+  if (inputValue.toString().length ===10) {
     button.disabled=false;
     input.classList.remove('red');
     
@@ -16,11 +18,11 @@ const inputBlur = (e) => {
 };
 
 const buttonHandler = () => {
-  if (inputValue.toString().length ===9) {
+  if (inputValue.toString().length ===10) {
     window.open("https://wa.me/+91" + inputValue, "_self");
   }
   
 };
 
-input.addEventListener("keydown", inputBlur);
+input.addEventListener("change", inputBlur);
 button.addEventListener("click", buttonHandler);
