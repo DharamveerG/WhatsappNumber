@@ -1,5 +1,7 @@
 let input = document.querySelector(".number");
 let button = document.querySelector(".mainButton");
+let mainDiv =document.querySelector('.main-div');
+
 let inputValue;
 button.disabled=true;
 const inputBlur = (e) => {
@@ -18,11 +20,12 @@ const inputBlur = (e) => {
 };
 
 const buttonHandler = () => {
+  
   if (inputValue.toString().length ===10) {
-    window.open("https://wa.me/+91" + inputValue, "_self");
+    window.open("https://wa.me/+91" + inputValue, "_blank");
   }
   
 };
 
-input.addEventListener("change", inputBlur);
-button.addEventListener("click", buttonHandler);
+input.addEventListener("keyup", inputBlur);
+mainDiv.addEventListener("sumbit", buttonHandler);
