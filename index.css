@@ -64,7 +64,7 @@ body {
     padding: 1em;
     border-radius: 1%;
     background-color: var(--background-color);
-   
+    color:var(--text-color);
     outline: rgb(199, 196, 193) solid;
 }
 
