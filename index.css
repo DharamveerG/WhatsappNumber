@@ -1,46 +1,83 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-body{
-    height: 100vh;
-    display: grid;
 
-align-items: center;
-justify-content: center;
+:root, html[data-theme='light'] {
+    --background-color: #fff;
+    --text-color: #000;
 }
-.main-div{
+
+html[data-theme='dark'] {
+    --background-color: #000;
+    --text-color: #fff;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10% 80% 10%;
+}
+
+
+.darkmode {
+    grid-column: 7;
+    border-radius: 50%;
+    padding: 1em;
+    background-color:var(--text-color);
+    cursor: pointer;
+}
+
+.main-div {
     display: grid;
     justify-items: center;
-   
+    align-items: center;
+
+}
+
+.github {
+
+    display: grid;
+
+    align-items: center;
+    align-items: center;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 1em;
+
+}
+
+.github a {
+    grid-column: 12;
+  text-decoration: none;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+
+
+.number {
+    border: none;
+    transition: outline .1s ease-in-out;
     padding: 1em;
+    border-radius: 1%;
+    background-color: var(--background-color);
+   
+    outline: rgb(199, 196, 193) solid;
 }
 
-.number{
-   margin-bottom: 2em;
-   border: none;
-   transition: outline .1s ease-in-out;
-   padding: 1em;
-   border-radius: 1%;
-
-}
-.number:focus{
-    outline:solid #25D366;
-    
-    
+.number::placeholder{
+color: var(--text-color);
+text-align: center;
 }
 
-.red{
+.number:focus {
+    outline: solid #6c6c6c;
+}
+
+.red {
     outline: solid #FF8080;
 }
-.mainButton{
-    width: 50%;
-    padding: .5em;
-    border: 1px solid #242424f3;
-    border-radius: 5px;
-    background-color:transparent;
-}
-.mainButton:hover{
-    background-color: #25D366;
-}
+
