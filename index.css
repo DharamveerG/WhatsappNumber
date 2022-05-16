@@ -84,3 +84,20 @@ text-align: center;
     outline: solid #FF8080;
 }
 
+@media screen and (min-width:450px) {
+    
+.darkmode {
+    padding: 2em;
+}
+}
+
+@media screen and (min-width:700px) {
+    
+    .darkmode {
+        grid-column: 1;
+        padding: 3em;
+    }
+    }
+    
+    
+
