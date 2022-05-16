@@ -28,7 +28,10 @@ body {
     border-radius: 50%;
     padding: 1em;
     background-color:var(--text-color);
-    cursor: pointer;
+   
+}
+.darkmode::selection{
+    color: transparent;
 }
 
 .main-div {
