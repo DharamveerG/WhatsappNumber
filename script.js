@@ -23,10 +23,12 @@ const inputBlur = (e) => {
   }
 };
 
-const buttonHandler = () => {
-  if (inputValue.toString().length ===10) {
-    window.open("https://wa.me/+91" + inputValue, "_self");
-  }
+const buttonHandler = (e) => {
+ 
+ if(e.key=="Enter" && inputValue.toString().length===10){
+   window.open("https://wa.me/+91"+inputValue,"_self");
+ }
+  
 };
 
 const darkModeHandler=()=>{
@@ -44,6 +46,6 @@ const darkModeHandler=()=>{
 }
 
 input.addEventListener("keyup", inputBlur);
-mainDiv.addEventListener("sumbit", buttonHandler);
+mainDiv.addEventListener("keypress", buttonHandler);
 darkMode.addEventListener('click',darkModeHandler)
 
