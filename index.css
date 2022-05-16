@@ -92,7 +92,9 @@ text-align: center;
 }
 
 @media screen and (min-width:700px) {
-    
+    body{
+        grid-template-rows: 30% 40% 30%;
+    }
     .darkmode {
         grid-column: 1;
         padding: 3em;
