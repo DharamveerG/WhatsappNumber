@@ -4,7 +4,10 @@
     padding: 0;
 }
 
-:root, html[data-theme='light'] {
+/* for theming  */
+
+:root,
+html[data-theme='light'] {
     --background-color: #fff;
     --text-color: #000;
 }
@@ -15,51 +18,40 @@ html[data-theme='dark'] {
 }
 
 body {
-  background: var(--background-color);
-  color: var(--text-color);
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 10% 80% 10%;
+    background: var(--background-color);
+    color: var(--text-color);
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
 }
-
 
 .darkmode {
     grid-column: 7;
-    border-radius: 50%;
-    padding: 1em;
-    background-color:var(--text-color);
-   
-}
-.darkmode::selection{
-    color: transparent;
+    display: grid;
+    justify-items: center;
 }
 
 .main-div {
     display: grid;
     justify-items: center;
     align-items: center;
-
 }
 
 .github {
-
     display: grid;
-
-    align-items: center;
     align-items: center;
     grid-template-columns: repeat(12, 1fr);
     margin: 1em;
-
 }
 
-.github a {
+.githubLogo {
     grid-column: 12;
-  text-decoration: none;
-    color: var(--text-color);
-    cursor: pointer;
+    background: url(./images/github.svg);
+    padding: 1em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
 }
-
-
 
 .number {
     border: none;
@@ -67,13 +59,13 @@ body {
     padding: 1em;
     border-radius: 1%;
     background-color: var(--background-color);
-    color:var(--text-color);
+    color: var(--text-color);
     outline: rgb(199, 196, 193) solid;
 }
 
-.number::placeholder{
-color: var(--text-color);
-text-align: center;
+.number::placeholder {
+    color: var(--text-color);
+    text-align: center;
 }
 
 .number:focus {
@@ -84,22 +76,73 @@ text-align: center;
     outline: solid #FF8080;
 }
 
+/* for big screens */
+
 @media screen and (min-width:450px) {
-    
-.darkmode {
-    padding: 2em;
-}
+
+    .darkmode {
+        padding: 2em;
+    }
 }
 
 @media screen and (min-width:700px) {
-    body{
+    body {
         grid-template-rows: 30% 40% 30%;
     }
+
     .darkmode {
         grid-column: 1;
         padding: 3em;
     }
-    }
-    
-    
+}
 
+/* end  */
+
+
+/* toogle Button */
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    
+    text-indent: -9999px;
+    width: 3em;
+    height: 1.7em;
+    background: var(--text-color);
+
+    border-radius: 6.25em;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+
+    left: .1em;
+    width: 1.4em;
+    height: 1.4em;
+    background: var(--background-color);
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked+label {
+    background: var(--text-color);
+}
+
+input:checked+label:after {
+
+    transform: translateX(99%);
+
+
+
+}
